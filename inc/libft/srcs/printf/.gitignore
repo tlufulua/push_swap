@@ -1,0 +1,17 @@
+main.c
+*.o
+*.a
+*.swp
+*.h.gch
+a.out
+.DS_Store
+*.dSYM
+venv/
+test
+pft/
+*.nfs.*
+PTFtester
+.PTFtester
+printfTester
+main.c
+prueba.c
