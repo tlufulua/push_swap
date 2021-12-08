@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 23:36:19 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 16:24:45 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:40:23 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int	check_order(t_stack *stack)
 	while (aux)
 	{
 		if (stack->pos != (aux->pos - 1))
-		   return (1);
+			return (1);
 		aux = aux->next;
-		stack = stack->next;	
+		stack = stack->next;
 	}
 	return (0);
 }

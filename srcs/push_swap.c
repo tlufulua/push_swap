@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 00:36:12 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 19:06:03 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:37:15 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_stack			*stack_a;
-	t_stack 		*stack_b;
+	t_stack			*stack_b;
 	unsigned int	len;
 
 	if (check(argc, argv, &stack_a))

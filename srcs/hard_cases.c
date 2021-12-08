@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:16:46 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 19:07:17 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:38:23 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ unsigned int	next_num(t_stack **stack, unsigned int i)
 	}
 	return (n);
 }
+
 /*
  * Agrupa los números dentro de un rango n pasándolos de la lista 'A' a la
  * lista 'B'.
@@ -70,8 +71,8 @@ void	last_ord(t_stack **stack_a, t_stack **stack_b)
 {
 	unsigned int	i;
 	unsigned int	n;
-	t_stack		*aux;
-	
+	t_stack			*aux;
+
 	i = stack_iter((*stack_b));
 	n = i / 10;
 	if (n < 3)
@@ -99,8 +100,6 @@ void	last_ord(t_stack **stack_a, t_stack **stack_b)
 void	more_than_five(t_stack **stack_a, t_stack **stack_b)
 {
 	chunk_ord(stack_a, stack_b);
-//	print_stack((*stack_b));
 	if ((*stack_b))
 		last_ord(stack_a, stack_b);
-//	print_stack((*stack_a));
 }
