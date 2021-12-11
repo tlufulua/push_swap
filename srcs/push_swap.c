@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 00:36:12 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 19:37:15 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/11 20:33:43 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ int	main(int argc, char **argv)
 		five_num(&stack_a, &stack_b);
 	else
 		more_than_five(&stack_a, &stack_b);
+	while (stack_a)
+	{
+		ft_printf("%i ", stack_a->num);
+		stack_a = stack_a->next;
+	}
 	free_stack(&stack_a);
 	return (0);
 }

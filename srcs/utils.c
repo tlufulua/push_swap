@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 01:00:35 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 19:01:24 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/11 20:33:39 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,14 @@ int	init_stack(t_stack **stack, char **argv, int len)
 	long int	n;
 
 	aux = 0;
-	while (--len)
+	while (len > 0)
 	{
+		while (*argv[len] == ' ')
+			(argv[len])++;
+		if (!*argv[len])
+			len--;
 		n = ft_atoli(argv[len]);
+		ft_printf("n: %i\n", n);
 		if (n > 2147483647 || n < -2147483648)
 			return (1);
 		(*stack) = ft_calloc(sizeof(t_stack), 1);
@@ -102,6 +107,10 @@ int	init_stack(t_stack **stack, char **argv, int len)
 		(*stack)->pos = 0;
 		(*stack)->next = aux;
 		aux = (*stack);
+		while (*argv[len] == '+' || *argv[len] == '-' || ft_isdigit(*argv[len]))
+			(argv[len])++;
+		if (!*argv[len])
+			len--;
 	}
 	mapper(stack);
 	return (0);
