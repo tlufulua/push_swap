@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 23:36:19 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 21:57:49 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/11 19:08:21 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,9 @@ int	check_digit(char **argv, int argc)
 			return (1);
 		while (argv[i][j])
 		{
-			if (j == 0 && (argv[i][j] == '-' || argv[i][j] == '+'))
+			while (argv[i][j] == ' ')
+				j++;
+			if (argv[i][j] == '-' || argv[i][j] == '+')
 				j++;
 			if (!ft_isdigit(argv[i][j++]))
 				return (1);
