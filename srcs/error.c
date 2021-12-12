@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 23:36:19 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 21:57:49 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/12 20:02:55 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,13 @@ int	check_digit(char **argv, int argc)
 			return (1);
 		while (argv[i][j])
 		{
-			if (j == 0 && (argv[i][j] == '-' || argv[i][j] == '+'))
+			while (argv[i][j] == ' ')
 				j++;
-			if (!ft_isdigit(argv[i][j++]))
+			if (argv[i][j] == '-' || argv[i][j] == '+')
+				j++;
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '\0')
 				return (1);
+			j++;
 		}
 		i++;
 	}
@@ -84,7 +87,7 @@ int	check(int argc, char **argv, t_stack **stack)
 		return (1);
 	if (check_digit(argv, argc))
 		return (write(2, "Error\n", 6));
-	if (init_stack(&(*stack), argv, argc))
+	if (init_stack(&(*stack), argv, argc - 1))
 		return (write(2, "Error\n", 6));
 	if (check_rep((*stack)))
 		return (write(2, "Error\n", 6));
