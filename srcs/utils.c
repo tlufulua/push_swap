@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 01:00:35 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/11 20:33:39 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/12 20:02:08 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,38 +80,4 @@ unsigned int	stack_iter(t_stack *stack)
 		i++;
 	}
 	return (++i);
-}
-
-/*
- * Inicializa la estructura y crea la lista usando los argumentos de entrada 
- * del programa.
- */
-int	init_stack(t_stack **stack, char **argv, int len)
-{
-	t_stack		*aux;
-	long int	n;
-
-	aux = 0;
-	while (len > 0)
-	{
-		while (*argv[len] == ' ')
-			(argv[len])++;
-		if (!*argv[len])
-			len--;
-		n = ft_atoli(argv[len]);
-		ft_printf("n: %i\n", n);
-		if (n > 2147483647 || n < -2147483648)
-			return (1);
-		(*stack) = ft_calloc(sizeof(t_stack), 1);
-		(*stack)->num = (int)n;
-		(*stack)->pos = 0;
-		(*stack)->next = aux;
-		aux = (*stack);
-		while (*argv[len] == '+' || *argv[len] == '-' || ft_isdigit(*argv[len]))
-			(argv[len])++;
-		if (!*argv[len])
-			len--;
-	}
-	mapper(stack);
-	return (0);
 }

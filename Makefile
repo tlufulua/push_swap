@@ -3,7 +3,7 @@ CC			=	@gcc
 CFLAGS		=	-Wall -Werror -Wextra -I $(INC) -I $(LIBFT_INC)
 INC			=	inc/
 SRCS_DIR	=	srcs/
-SRCS		=	push_swap.c utils.c push_swap_funct.c rotate_funct.c \
+SRCS		=	push_swap.c utils.c utils2.c push_swap_funct.c rotate_funct.c \
 				rotate_funct2.c simple_cases.c hard_cases.c error.c
 LIBFT_DIR	=	$(INC)libft/
 LIBFT_INC	=	$(LIBFT_DIR)inc/
