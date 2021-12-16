@@ -12,6 +12,26 @@
 
 #include <push_swap.h>
 
+/*
+ * Libera la cadena usada para recoger el split.
+ */
+void	free_split(char	**split)
+{
+	unsigned int		x;
+	
+	x = 0;
+	while (split[x])
+		x++;
+	while (x-- > 0)
+		free(split[x]);
+	free(split);
+}
+
+/*
+ * Inicializa la estructura y crea la lista usando los argumentos de entrada 
+ * del programa. Además comprueba que el argumento recibido no sea más grande de
+ * un int.
+ */
 int	make_list(t_stack **stack, char *argv)
 {
 	long int			n;
@@ -25,9 +45,9 @@ int	make_list(t_stack **stack, char *argv)
 	aux2 = ft_split(argv, ' ');
 	while (aux2[len2])
 		len2++;
-	while (len2 > 0)
+	while (len2-- > 0)
 	{
-		n = ft_atoli(aux2[len2 - 1]);
+		n = ft_atoli(aux2[len2]);
 		if (n > 2147483647 || n < -2147483648)
 			return (1);
 		(*stack) = ft_calloc(sizeof(t_stack), 1);
@@ -35,16 +55,11 @@ int	make_list(t_stack **stack, char *argv)
 		(*stack)->pos = 0;
 		(*stack)->next = aux;
 		aux = (*stack);
-		len2--;
 	}
+	free_split(aux2);
 	return (0);
 }
 
-/*
- * Inicializa la estructura y crea la lista usando los argumentos de entrada 
- * del programa. Además comprueba que el argumento recibido no sea más grande de
- * un int.
- */
 int	init_stack(t_stack **stack, char **argv, int len)
 {
 	while (len > 0)

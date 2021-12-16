@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 		five_num(&stack_a, &stack_b);
 	else
 		more_than_five(&stack_a, &stack_b);
+	
 	free_stack(&stack_a);
 	return (0);
 }

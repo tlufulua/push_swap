@@ -30,11 +30,15 @@ int				check_order(t_stack *stack);
 int				check_rep(t_stack *stack);
 
 //UTILS
-int				init_stack(t_stack **stack, char **argv, int len);
 void			free_stack(t_stack **stack);
 void			mapper(t_stack **stack);
 t_stack			*last_node(t_stack *stack);
 unsigned int	stack_iter(t_stack *stack);
+
+//UTILS 2
+void			free_split(char **split);
+int				make_list(t_stack **stack, char *argv);
+int				init_stack(t_stack **stack, char **argv, int len);
 
 //PUSH_SWAP_FUNCT
 void			sa(t_stack **stack_a);
