@@ -42,14 +42,12 @@ void	mapper(t_stack **stack)
  */
 void	free_stack(t_stack **stack)
 {
-	t_stack	*aux;
+	unsigned int	len;
 
-	while ((*stack) && (*stack)->num)
-	{
-		aux = (*stack);
-		(*stack) = (*stack)->next;
-		free(aux);
-	}
+	len = stack_iter((*stack));
+	ft_printf("len: %i\n", len);
+	while (len-- > 1)
+		free(stack[len]);
 }
 
 /*

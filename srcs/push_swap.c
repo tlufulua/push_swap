@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <push_swap.h>
+#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
@@ -21,6 +22,7 @@ int	main(int argc, char **argv)
 	if (check(argc, argv, &stack_a))
 	{
 		free_stack(&stack_a);
+		system("leaks push_swap");	
 		return (0);
 	}
 	stack_b = NULL;
@@ -34,6 +36,6 @@ int	main(int argc, char **argv)
 	else
 		more_than_five(&stack_a, &stack_b);
 	
-	free_stack(&stack_a);
+	system("leaks push_swap");	
 	return (0);
 }
