@@ -1,6 +1,6 @@
 NAME		=	push_swap
 CC			=	@gcc
-CFLAGS		=	-Wall -Werror -Wextra -I $(INC) -I $(LIBFT_INC)
+CFLAGS		=	-Wall -Werror -Wextra -I $(INC) -I $(LIBFT_INC) -g3 -fsanitize=address
 INC			=	inc/
 SRCS_DIR	=	srcs/
 SRCS		=	push_swap.c utils.c utils2.c push_swap_funct.c rotate_funct.c \

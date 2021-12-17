@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 01:00:35 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/12 20:02:08 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/17 20:21:56 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,14 @@ void	mapper(t_stack **stack)
  */
 void	free_stack(t_stack **stack)
 {
-	unsigned int	len;
+	t_stack			*aux;
 
-	len = stack_iter((*stack));
-	ft_printf("len: %i\n", len);
-	while (len-- > 1)
-		free(stack[len]);
+	if ((*stack))
+	{	
+		aux = (*stack)->next;
+		free((*stack));
+		(*stack) = aux;
+	}
 }
 
 /*
