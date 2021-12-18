@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:16:46 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 19:38:23 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/17 21:12:46 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	chunk_ord(t_stack **stack_a, t_stack **stack_b)
 			while (last_node((*stack_a))->pos < (*stack_a)->pos)
 				rra(stack_a);
 			pb(stack_b, stack_a);
-			if ((*stack_b)->next && (*stack_b)->pos < (i / 2))
+			if ((*stack_b)->next && (*stack_b)->pos < i / 2)
 				rb(stack_b);
 		}
 		else
@@ -105,9 +105,10 @@ void	more_than_five(t_stack **stack_a, t_stack **stack_b)
 	aux = (*stack_b);
 	while (aux)
 	{
-		ft_printf("%i(%i) ", aux->num, aux->pos);
+		ft_printf("%i ", aux->num);
 		aux = aux->next;
 	}
+	ft_printf("\n");
 	if ((*stack_b))
 		last_ord(stack_a, stack_b);
 }
