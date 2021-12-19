@@ -107,19 +107,19 @@ void	more_than_five(t_stack **stack_a, t_stack **stack_b)
 	
 	chunk_ord(stack_a, stack_b);
 	aux = (*stack_b);
-	while (aux)
+/*	while (aux)
 	{
 		ft_printf("%i ", aux->num);
 		aux = aux->next;
 	}
 	ft_printf("\n");
-	if ((*stack_b))
+*/	if ((*stack_b))
 		last_ord(stack_a, stack_b);
-	aux = (*stack_a);
+/*	aux = (*stack_a);
 	while (aux)
 	{
 		ft_printf("%i ", aux->num);
 		aux = aux->next;
 	}
 	ft_printf("\n");
-}
+*/}
