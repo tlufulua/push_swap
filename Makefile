@@ -29,7 +29,7 @@ clean:
 	@make clean -C $(LIBFT_DIR)
 
 fclean:	clean
-	@rm $(NAME)
+	@find . -name "$(NAME)" -delete
 	@make fclean -C $(LIBFT_DIR)
 
 re:		fclean all
