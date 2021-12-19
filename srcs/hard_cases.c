@@ -39,6 +39,7 @@ void	chunk_ord(t_stack **stack_a, t_stack **stack_b)
 {
 	unsigned int	i;
 	unsigned int	n;
+	t_stack			*aux;
 
 	n = stack_iter((*stack_a)) / 10;
 	if (n < 3)
@@ -46,6 +47,7 @@ void	chunk_ord(t_stack **stack_a, t_stack **stack_b)
 	i = n;
 	while ((*stack_a))
 	{
+		aux = (*stack_a)->next;
 		if (!check_order((*stack_a)))
 			return ;
 		if ((*stack_b) && stack_iter((*stack_b)) == i)
@@ -55,9 +57,11 @@ void	chunk_ord(t_stack **stack_a, t_stack **stack_b)
 			while (last_node((*stack_a))->pos < (*stack_a)->pos)
 				rra(stack_a);
 			pb(stack_b, stack_a);
-			if ((*stack_b)->next && (*stack_b)->pos < i / 2)
+			if ((*stack_b)->next && (*stack_b)->pos < i - n)
 				rb(stack_b);
 		}
+		else if ((*stack_a)->pos > aux->pos)
+			sa(stack_a);
 		else
 			ra(stack_a);
 	}
@@ -111,4 +115,11 @@ void	more_than_five(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("\n");
 	if ((*stack_b))
 		last_ord(stack_a, stack_b);
+	aux = (*stack_a);
+	while (aux)
+	{
+		ft_printf("%i ", aux->num);
+		aux = aux->next;
+	}
+	ft_printf("\n");
 }
