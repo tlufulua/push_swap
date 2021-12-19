@@ -32,15 +32,12 @@ void	free_split(char	**split)
  * del programa. Además comprueba que el argumento recibido no sea más grande de
  * un int.
  */
-int	make_list(t_stack **stack, char *argv)
+int	make_list(t_stack **stack, char *argv, t_stack **aux)
 {
 	long int			n;
 	char				**aux2;
 	unsigned int		len2;
-	static t_stack		*aux;
 
-	if (!aux)
-		aux = 0;
 	len2 = 0;
 	aux2 = ft_split(argv, ' ');
 	while (aux2[len2])
@@ -49,12 +46,15 @@ int	make_list(t_stack **stack, char *argv)
 	{
 		n = ft_atoli(aux2[len2]);
 		if (n > 2147483647 || n < -2147483648)
+		{
+			free_split(aux2);
 			return (1);
+		}
 		(*stack) = ft_calloc(sizeof(t_stack), 1);
 		(*stack)->num = (int)n;
 		(*stack)->pos = 0;
-		(*stack)->next = aux;
-		aux = (*stack);
+		(*stack)->next = (*aux);
+		(*aux) = (*stack);
 	}
 	free_split(aux2);
 	return (0);
@@ -62,9 +62,12 @@ int	make_list(t_stack **stack, char *argv)
 
 int	init_stack(t_stack **stack, char **argv, int len)
 {
+	t_stack	*aux;
+
+	aux = 0;
 	while (len > 0)
 	{
-		if (make_list(stack, argv[len]))
+		if (make_list(stack, argv[len], &aux))
 			return (1);
 		len--;
 	}

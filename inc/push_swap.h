@@ -37,7 +37,7 @@ unsigned int	stack_iter(t_stack *stack);
 
 //UTILS 2
 void			free_split(char **split);
-int				make_list(t_stack **stack, char *argv);
+int				make_list(t_stack **stack, char *argv, t_stack **aux);
 int				init_stack(t_stack **stack, char **argv, int len);
 
 //PUSH_SWAP_FUNCT
