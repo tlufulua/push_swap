@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 23:36:19 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/21 04:40:15 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/21 05:48:07 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	check(int argc, char **argv, t_stack **stack)
 {
 	if (argc <= 1 || !argv[1])
 		return (1);
-	if (check_digit(argv, argc))
+	if (check_digit(argv, argc) != 0)
 		return (write(2, "Error\n", 6));
 	if (init_stack(&(*stack), argv, argc - 1))
 		return (write(2, "Error\n", 6));
