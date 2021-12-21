@@ -11,7 +11,7 @@ SRCS = 		ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
 			ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 			ft_lstclear.c ft_lstiter.c ft_lstmap.c get_next_line.c ft_itoa_base.c repeat_char.c \
-			ft_union.c ft_atoli.c
+			ft_union.c ft_atoli.c ft_isdiff.c
 
 PRINTF_DIR=	$(SRCS_DIR)printf/
 PRINTF=		ft_printf.c integers.c chars.c funct_utils.c get_flags.c flags.c

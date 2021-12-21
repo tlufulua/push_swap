@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoli.c                                         :+:      :+:    :+:   */
+/*   ft_isdiff.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/25 18:15:59 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/21 03:37:17 by tlufulua         ###   ########.fr       */
+/*   Created: 2021/12/21 04:24:35 by tlufulua          #+#    #+#             */
+/*   Updated: 2021/12/21 04:32:54 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-long int	ft_atoli(const char *str)
+/*
+ * Comprueba si hay algún caractér distinto a 'c' en la cadena s. Si lo hay, devuelve 0.
+ */
+int	ft_isdiff(const char *s, int c)
 {
-	long int		n;
-	long int		x;
-
-	n = 0;
-	x = 1;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	if (*str == '-' || *str == '+')
+	while (*s)
 	{
-		if (*str++ == '-')
-			x = -1;
+		if (*s != c)
+			return (1);
+		s++;
 	}
-	while (*str >= '0' && *str <= '9')
-		n = (n * 10) + (*str++ - '0');
-	return (x * n);
+	return (0);
 }
