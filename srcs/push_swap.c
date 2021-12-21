@@ -6,12 +6,11 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 00:36:12 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/17 20:21:54 by tlufulua         ###   ########.fr       */
+/*   Updated: 2021/12/21 04:55:36 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
