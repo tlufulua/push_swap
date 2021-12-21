@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 
 #include <push_swap.h>
+#include <stdlib.h>
+
+void	hola(void)
+{
+	system("leaks push_swap");
+}
 
 int	main(int argc, char **argv)
 {
@@ -18,6 +24,7 @@ int	main(int argc, char **argv)
 	t_stack			*stack_b;
 	unsigned int	len;
 
+	atexit(hola);
 	stack_a = 0;
 	stack_b = 0;
 	if (!check(argc, argv, &stack_a))

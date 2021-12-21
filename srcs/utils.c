@@ -44,7 +44,7 @@ void	free_stack(t_stack **stack)
 {
 	t_stack			*aux;
 
-	if ((*stack))
+	while ((*stack))
 	{
 		aux = (*stack)->next;
 		free((*stack));
