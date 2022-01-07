@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 01:34:20 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/10/20 00:32:16 by tlufulua         ###   ########.fr       */
+/*   Updated: 2022/01/07 18:08:37 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	write_hex(va_list arg, const char **format, t_store *ste)
 		(*format)++;
 }
 
-void	write_heX(va_list arg, const char **format, t_store *ste)
+void	write_hex_upper(va_list arg, const char **format, t_store *ste)
 {
 	char	*aux;
 

@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 01:00:35 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/21 05:48:09 by tlufulua         ###   ########.fr       */
+/*   Updated: 2022/01/07 18:05:27 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 void	free_split(char	**split)
 {
 	unsigned int		x;
-	
+
 	x = 0;
 	while (split[x])
 		x++;

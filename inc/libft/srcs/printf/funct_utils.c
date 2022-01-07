@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 17:45:47 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/10/20 00:31:48 by tlufulua         ###   ########.fr       */
+/*   Updated: 2022/01/07 18:08:36 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	start_structs(t_funct *fts)
 	fts[5] = (t_funct){'i', &write_int};
 	fts[6] = (t_funct){'u', &write_unint};
 	fts[7] = (t_funct){'x', &write_hex};
-	fts[8] = (t_funct){'X', &write_heX};
+	fts[8] = (t_funct){'X', &write_hex_upper};
 }
 
 void	mk_funct(t_funct *fts, const char **format, t_store *ste, \

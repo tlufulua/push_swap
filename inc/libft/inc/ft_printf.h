@@ -6,7 +6,7 @@
 /*   By: tlufulua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 19:30:04 by tlufulua          #+#    #+#             */
-/*   Updated: 2021/12/08 19:32:10 by tlufulua         ###   ########.fr       */
+/*   Updated: 2022/01/07 18:07:41 by tlufulua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void		write_percent(va_list arg, const char **format, \
 			t_store *ste);
 void		write_char(va_list arg, const char **format, t_store *ste);
 void		write_hex(va_list arg, const char **format, t_store *ste);
-void		write_heX(va_list arg, const char **format, t_store *ste);
+void		write_hex_upper(va_list arg, const char **format, t_store *ste);
 void		write_long_hex(va_list arg, const char **format, \
 			t_store *ste);
 
